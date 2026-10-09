@@ -35,7 +35,10 @@ COST_FP = 1.0
 
 # Regularization: sklearn's C is the INVERSE strength (smaller C = stronger
 # penalty). A small sweep on the validation set is the only tuning we do.
-C_GRID = [0.01, 0.1, 1.0, 10.0]
+# Extended downward after the first run picked 0.01, the smallest value on the
+# original grid — a winner at the edge means the grid never looked where the
+# optimum actually is. Check this again if your feature set changes a lot.
+C_GRID = [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0]
 
 # Gradient-descent settings for both PyTorch versions (full batch).
 LR = 0.5
