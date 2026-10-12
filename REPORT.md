@@ -38,20 +38,24 @@ severe class imbalance makes it a realistic test of why accuracy is the wrong me
 
 ### The organisation
 
-*(Hypothetical, constructed for this assignment.)* The **National Cardio-Oncology Centre** is the
-country's leading referral centre for patients who have both cancer and cardiovascular disease.
-This is a real and growing specialty: anthracyclines, trastuzumab and chest radiotherapy are all
-cardiotoxic, and cancer survivors carry elevated cardiovascular risk for years afterwards, which
-is why dedicated cardio-oncology clinics now exist to risk-stratify these patients before and
-during treatment.
+**Corvanta Cardio-Oncology Institute is a fictional organisation, invented for this assignment.**
+It does not exist and is not modelled on any real provider; the name is coined so that it cannot be
+mistaken for one.
 
-The Centre's clinical excellence is not the constraint. Its **referral pipeline** is. Patients who
+In the scenario, Corvanta is the country's leading referral centre for patients who have both
+cancer and cardiovascular disease, operating an outreach programme across its own catchment
+region. The specialty itself is real and growing: anthracyclines, trastuzumab and chest
+radiotherapy are all cardiotoxic, and cancer survivors carry elevated cardiovascular risk for
+years afterwards, which is why dedicated cardio-oncology clinics now exist to risk-stratify these
+patients before and during treatment.
+
+Corvanta's clinical excellence is not the constraint. Its **referral pipeline** is. Patients who
 reach a cardio-oncology service only after an acute cardiac event arrive sicker, cost more to
 treat, and have fewer treatment options than patients identified before the event.
 
 ### The decision the model supports
 
-The Centre runs a **community outreach screening programme** across its catchment region. It
+Corvanta runs a **community outreach screening programme** across its catchment region. It
 fields a health questionnaire — the BRFSS instrument — to adults in the region, scores each
 respondent, and invites the high scorers for a cardiac workup (nurse consultation, ECG, and
 onward referral where indicated).
@@ -382,7 +386,7 @@ against the unweighted fit to quantify the distortion.
 
 **3. The model is trained on US adults nationally, applied to one catchment region.** The outreach
 programme operates in a specific area; `region` is in the model, but a nationally fitted model may
-not transfer to one region's demographic mix. *Next step:* refit on the Centre's own region and
+not transfer to one region's demographic mix. *Next step:* refit on Corvanta's own region and
 compare, or add a region-specific intercept.
 
 **4. Self-report only, no clinical measurements.** There is no blood pressure, cholesterol,
