@@ -429,8 +429,7 @@ decided on that basis which changes I wanted, and asked Claude to make those
 changes and push the work to GitHub.
 
 The direction, the feature choices and the decisions taken after each round of
-testing are mine. The code, the notebooks and the drafting of this report were
-produced by Claude under that direction.
+testing are mine. 
 
 
 
