@@ -28,10 +28,15 @@ from common import (ARTIFACTS, DATA_PATH, SEED, TARGET, LogisticRegressionNet,
 # Settings YOU own. Each one needs a sentence of justification in REPORT.md.
 # ---------------------------------------------------------------------------
 # Business costs: what does one missed case (false negative) cost relative to
-# one unnecessary flag (false positive)? PLACEHOLDERS — derive yours from your
-# framing. Together they decide the threshold and the dashboard's cost number.
-COST_FN = 10.0
-COST_FP = 1.0
+# one unnecessary flag (false positive)? Together they decide the threshold and
+# the dashboard's cost number.
+#
+# A missed case costs 8.1x an unnecessary flag ($2,436 vs $300). Only the RATIO
+# moves the threshold; the absolute euros just scale cost_per_1000, which is why
+# the numbers are kept in real dollars (the reported cost is then readable as
+# money, not as an index).
+COST_FN = 2436.0
+COST_FP = 300.0
 
 # Regularization: sklearn's C is the INVERSE strength (smaller C = stronger
 # penalty). A small sweep on the validation set is the only tuning we do.
