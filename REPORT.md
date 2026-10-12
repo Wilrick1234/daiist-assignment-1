@@ -3,11 +3,6 @@
 - **Name**: Wilrick Dong
 - **Group**: BBADBA 5B
 
-*Student ID and email are deliberately omitted from this public repository. Authorship is
-established by the repository owner's account; reproducing those identifiers here would add
-nothing and would persist in the git history permanently. Both are available to the teaching team
-through the course's own systems.*
-
 ---
 
 ## Dataset
@@ -42,8 +37,6 @@ severe class imbalance makes it a realistic test of why accuracy is the wrong me
 ### The organisation
 
 **Corvanta Cardio-Oncology Institute is a fictional organisation, invented for this assignment.**
-It does not exist and is not modelled on any real provider; the name is coined so that it cannot be
-mistaken for one.
 
 In the scenario, Corvanta is the country's leading referral centre for patients who have both
 cancer and cardiovascular disease, operating an outreach programme across its own catchment
@@ -426,29 +419,21 @@ equal overall accuracy can still mean unequal access.
 
 I used Anthropic's Claude (via Claude Code) throughout this assignment. Specifically:
 
-**Where it did the work.** It wrote the feature-set search that produced the final ten features —
-a bidirectional greedy search scoring candidate sets on mean validation PR-AUC across reshuffles,
-rather than the single split the notebooks start from. It implemented `engineer_features()` in
-`common.py`, set the cost constants in `train.py`, rewrote the three notebooks' commentary, and
-drafted this report. It also ran a technical audit of the finished pipeline, which found a real
-defect: `male_x_age` evaluated to `NaN` rather than `0` for women with a blank `AgeCategory`,
-because `NaN * 0` is `NaN`. That was fixed, and verified to be numerically a no-op on this sample.
+ I used Claude (Anthropic), through Claude Code, for both the code and the writing
+of this report.
 
-**Where I made the decisions.** The dataset and the business framing are mine, as is the decision
-to keep `HadAngina` rather than drop it as leakage — I asked for the cost of the alternative to be
-measured, and it is reported as a sensitivity analysis rather than hidden. The cost figures
-(\$2,436 and \$300) and the choice to hold that ratio fixed are mine. Many of the feature ideas
-tested in notebook 03 originate from my own reading of the EDA in notebook 01.
+I used it first for planning: I set out the direction and the features I wanted to
+engineer, and Claude turned that into a concrete plan. It then built the testing
+pipeline and wrote the supporting code, including the exploratory data analysis
+notebooks.
 
-**Where I pushed back on it.** It initially framed the scenario around hospital patients; I
-rejected that because BRFSS rows are survey respondents, not patients, and the framing was changed
-to an outreach screening programme so that the data matches the unit of decision. It also proposed
-a real-sounding organisation name, which I asked to be replaced with an invented one.
+With the plan agreed, Claude implemented it and ran the tests. I read the results,
+decided on that basis which changes I wanted, and asked Claude to make those
+changes and push the work to GitHub.
 
-**What I verified myself.** The numbers in this report are reproducible by running
-`uv run python main.py train`; they are not transcribed from the conversation. The equivalence
-between `common.py` and notebook 03 is checked in the notebook itself, column by column.
+The direction, the feature choices and the decisions taken after each round of
+testing are mine. The code, the notebooks and the drafting of this report were
+produced by Claude under that direction.
 
-**One borrowed idea, measured and rejected.** `bmi_recompute` is taken from a public Kaggle
-notebook on the same dataset, cited at its definition in notebook 03. It was tested and dropped
-for being worth +0.0000 on this sample.
+
+
