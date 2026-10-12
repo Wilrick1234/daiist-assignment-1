@@ -417,9 +417,7 @@ equal overall accuracy can still mean unequal access.
 
 ## Generative AI use disclosure
 
-I used Anthropic's Claude (via Claude Code) throughout this assignment. Specifically:
-
- I used Claude (Anthropic), through Claude Code, for both the code and helping me rewrite the report in better way than my own words
+I used Claude (Anthropic), through Claude Code, for both the code and helping me rewrite the report in better way than my own words.
 
 I used it first for planning: I set out the direction and the features I wanted to
 engineer, and Claude turned that into a concrete plan. It then built the testing
